@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<template v-if="list.length > 0">
-			<omdb-list-item v-for="(item, i) in list" :key="i" />
+			<omdb-list-item v-for="(item, i) in list" :key="i" :item="item" />
 		</template>
 		<template v-else>
 			<h1>Pas d'item</h1>

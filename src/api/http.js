@@ -1,11 +1,11 @@
 import axios from 'axios'
 
-const { API_KEY } = process.env
+const { VUE_APP_API_KEY } = process.env
 
-console.log(process.env.API_KEY)
+console.log(process.env.VUE_APP_API_KEY)
 
 const http = axios.create({
-	baseURL: `http://www.omdbapi.com/?apikey=${API_KEY}&`
+	baseURL: `http://www.omdbapi.com/?apikey=${VUE_APP_API_KEY}&`
 })
 
 

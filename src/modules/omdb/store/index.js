@@ -25,6 +25,7 @@ export default {
 				// data.totalResults = 1   data.Search = []
 				const list = []
 				for (let item of data.Search) {
+					console.log(item)
 					let entity
 					if (item.Type == 'movie') {
 						entity = new Movie(item)
