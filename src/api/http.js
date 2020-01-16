@@ -22,7 +22,7 @@ const loggerInterceptor = config => {
 http.interceptors.request.use(authInterceptor);
 http.interceptors.request.use(loggerInterceptor);
 
-httpClient.interceptors.response.use(
+http.interceptors.response.use(
 	response => {
 		/** TODO: Add any response interceptors */
 		return response;

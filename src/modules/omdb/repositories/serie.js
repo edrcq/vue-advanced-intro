@@ -4,6 +4,6 @@ const type = 'series'
 
 export default {
 	find(title) {
-		return http.get(`type=${type}&t=${title}`)
+		return http.get(`type=${type}&s=${title}`)
 	}
 }

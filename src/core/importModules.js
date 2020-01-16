@@ -2,12 +2,13 @@ const modulesList = [
 	'omdb'
 ]
 
-async function importModules({ store }) {
+async function importModules({ store, router }) {
 	// import vuex store of the module
 	for (let moduleName of modulesList) {
-		const vuexModule = await import(`@/modules/${moduleName}/store`)
-		console.log({ vuexModule })
-		store.registerModule(moduleName, vuexModule.default)
+		const vuexModule = await import(`@/modules/${moduleName}`)
+		store.registerModule(moduleName, vuexModule.store)
+
+		router.addRoutes(vuexModule.router)
 	}
 }
 

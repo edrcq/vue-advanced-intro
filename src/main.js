@@ -22,7 +22,7 @@ Vue.use(ui, {
 })
 
 
-importModules({ store }).then(() => {
+importModules({ store, router }).then(() => {
   new Vue({
     provide: { authRepository },
     router,
