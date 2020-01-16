@@ -6,13 +6,11 @@
 </template>
 
 <script>
-import OmdbSearchBar from '../components/OmdbSearchBar.vue'
-import OmdbList from '../components/OmdbList.vue'
 
 export default {
 	components: {
-		OmdbSearchBar,
-		OmdbList,
+		OmdbSearchBar: () => import('../components/OmdbSearchBar.vue'),
+		OmdbList: () => import('../components/OmdbList.vue')
 	},
 
 	data() { return {

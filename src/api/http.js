@@ -2,6 +2,8 @@ import axios from 'axios'
 
 const { API_KEY } = process.env
 
+console.log(process.env.API_KEY)
+
 const http = axios.create({
 	baseURL: `http://www.omdbapi.com/?apikey=${API_KEY}&`
 })

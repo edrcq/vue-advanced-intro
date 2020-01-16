@@ -1,7 +1,9 @@
 import * as repositories from '../repositories'
 
+import sharedErrorHandler from '@/app/shared/errorHandler'
+
 import {
-	Movie,
+	Movie, Generic,
 } from '../entity'
 
 // omdb vuex store
@@ -27,6 +29,9 @@ export default {
 					if (item.Type == 'movie') {
 						entity = new Movie(item)
 					}
+					else {
+						entity = new Generic(item)
+					}
 					list.push(entity)
 				}
 				console.log(list)
@@ -38,6 +43,7 @@ export default {
 
 			}
 			catch (err) {
+				sharedErrorHandler(err)
 				return []
 			}
 		}

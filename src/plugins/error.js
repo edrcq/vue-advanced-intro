@@ -4,12 +4,14 @@ Vue.config.errorHandler = (err, vm, info) => {
 	// err: error trace
 	// vm: component in which error occured
 	// info: Vue specific error information such as lifecycle hooks, events etc.
+	console.log(err, vm, info)
 
 	// TODO: Perform any custom logic or log to server
 };
 
+console.log({ window })
 window.onerror = function(message, source, lineno, colno, error) {
-
+	console.log(message, source, lineno, colno, error)
 };
 
 /*
