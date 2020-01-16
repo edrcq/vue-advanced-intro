@@ -12,21 +12,25 @@ import '@mdi/font/css/materialdesignicons.css'
 
 import { authRepository, ui, importModules } from './core'
 
-console.log(importModules)
-importModules({ store })
-
-Vue.use(ui, {
-  oneOption: 'Hello'
-})
 
 Vue.config.devtools = true
 Vue.config.performance = true
 Vue.config.productionTip = false
 
-new Vue({
-  provide: { authRepository },
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
+Vue.use(ui, {
+  oneOption: 'Hello'
+})
+
+
+importModules({ store }).then(() => {
+  new Vue({
+    provide: { authRepository },
+    router,
+    store,
+    vuetify,
+    render: h => h(App)
+  }).$mount('#app')
+})
+
+
+

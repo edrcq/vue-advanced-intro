@@ -20,7 +20,7 @@ export default {
     s_subdomain: '',
   }},
   mounted() {
-
+    this.$store.commit('omdb/test', 'hello world')
   },
   computed: {
     subdomain: {
